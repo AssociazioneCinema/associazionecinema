@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sostienici | C.I.N.E.M.A.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logo-black.png" alt="C.I.N.E.M.A." class="logo-img">
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Chi&nbsp;Siamo</a></li>
+        <li><a href="statute.html">Statuto</a></li>
+        <li><a href="gallery.html">Galleria</a></li>
+        <li><a href="join.html">Iscriviti</a></li>
+        <li><a href="donate.html" class="active">Sostienici</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page hero with vintage cinema reel background -->
+  <section class="page-hero" style="background-image: url('images/cinema/ef30b8b9.jpeg');">
+    <div class="page-hero-overlay">
+      <h1>Sostienici</h1>
+    </div>
+  </section>
+
+  <!-- Donation content -->
+  <section class="content">
+    <div class="container">
+      <h2>Come sostenerci</h2>
+      <p>Grazie al tuo contributo possiamo continuare a restaurare il nostro cinema, organizzare eventi e attività culturali e mantenere viva la memoria del Modernissimo. Puoi scegliere se versare la quota sociale, fare una donazione oppure semplicemente sostenere i nostri progetti.</p>
+      <h3>Tramite bonifico bancario</h3>
+      <!--
+        Sostituisci l'IBAN sottostante con quello del conto dell'associazione. Il testo
+        "Intestato a" indica a chi è intestato il conto. La causale può essere
+        personalizzata a seconda del tipo di contributo.
+      -->
+      <p><strong>IBAN:</strong> <span class="iban">IT00X0000000000000000000000</span></p>
+      <p>Intestato a: Associazione Culturale C.I.N.E.M.A.</p>
+      <p>Causale: Quota associativa / Donazione</p>
+
+      <h3>Tramite PayPal</h3>
+      <!--
+        Imposta il link PayPal seguente con l'URL della pagina di donazione del vostro
+        account PayPal. Puoi recuperare il link accedendo al tuo account PayPal e
+        generando un link di pagamento personalizzato.
+      -->
+      <p>Puoi effettuare una donazione libera cliccando sul pulsante qui sotto:</p>
+      <p><a href="https://www.paypal.com/paypalme/IL_TUO_LINK" class="button">Dona con PayPal</a></p>
+      <p><em>Nota: i dati sopra riportati sono a titolo esemplificativo. Sostituiscili con il tuo IBAN e il link PayPal effettivo.</em></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-section">
+        <h4>Contatti</h4>
+        <p>Via Roma&nbsp;123, 20100&nbsp;Milano&nbsp;(MI)<br>
+           Email: info@associazionexyz.it<br>
+           Telefono: +39&nbsp;123&nbsp;456&nbsp;789</p>
+      </div>
+      <div class="footer-section">
+        <h4>Seguici</h4>
+        <ul class="social">
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Informazioni</h4>
+        <ul>
+          <li><a href="statute.html">Statuto</a></li>
+          <li><a href="about.html">Chi&nbsp;Siamo</a></li>
+          <li><a href="join.html">Iscriviti</a></li>
+          <li><a href="donate.html">Sostienici</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; <span id="year"></span> Associazione Culturale C.I.N.E.M.A.. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for dynamic year and mobile menu -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggleButton = document.getElementById('menu-toggle');
+    const navList = document.querySelector('header nav ul');
+    toggleButton.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

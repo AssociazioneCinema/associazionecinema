@@ -1,0 +1,540 @@
+/* Base styles for the cultural association website */
+
+/* CSS variables for easy theming */
+:root {
+  /*
+    Palette inspired by i cinema anni '60: colori caldi e nostalgici ma con un tocco di vitalità.
+    primary-color: tonalità scura di blu/teal per titoli e barre di navigazione.
+    secondary-color: rosso ruggine per elementi di evidenza.
+    accent-color: crema/beige per sfondi e card.
+    highlight-color: giallo senape per accenti e dettagli.
+  */
+  --primary-color: #2b3a42;
+  --secondary-color: #bc4b51;
+  --accent-color: #f5e9dc;
+  --highlight-color: #e3b505;
+  --text-color: #333333;
+  --heading-font: 'Poppins', sans-serif;
+}
+
+/* Reset and typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--heading-font);
+  color: var(--text-color);
+  line-height: 1.6;
+  background: #ffffff;
+  padding-top: 70px; /* space for the fixed navigation bar */
+}
+
+/* Navigation bar */
+header.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo container: holds either text or image */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+/* Text inside logo (fallback) */
+.navbar .logo span {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* Logo image */
+.logo-img {
+  height: 45px;
+  width: auto;
+  display: block;
+}
+
+header.navbar nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+header.navbar nav ul li {
+  margin-left: 1rem;
+}
+
+header.navbar nav ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header.navbar nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  display: none;
+}
+
+/* Hero sections */
+.hero {
+  background: url('images/hero.png') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-overlay {
+  position: relative;
+  color: #ffffff;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-overlay p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--secondary-color);
+  color: #ffffff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: var(--primary-color);
+}
+
+.link-button {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+.link-button:hover {
+  color: var(--secondary-color);
+}
+
+/* Section spacing */
+section {
+  padding: 4rem 1rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* About preview section */
+.about-preview {
+  background: var(--accent-color);
+  text-align: center;
+}
+
+.about-preview h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.about-preview p {
+  margin-bottom: 1.5rem;
+}
+
+/* Mission cards */
+.mission {
+  background: #ffffff;
+}
+
+.mission-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.mission-item {
+  flex: 1 1 30%;
+  min-width: 250px;
+  background: var(--accent-color);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mission-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.mission-item p {
+  font-size: 0.95rem;
+}
+
+/* Call to action section */
+.cta {
+  background: var(--secondary-color);
+  color: #ffffff;
+  text-align: center;
+}
+
+/* CTA variant with background image */
+.cta.image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #ffffff;
+}
+.cta.image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.cta.image .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cta .button {
+  background: #ffffff;
+  color: var(--secondary-color);
+}
+
+.cta .button:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Footer */
+footer {
+  background: var(--primary-color);
+  color: #f9f9f9;
+  padding-top: 3rem;
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h4 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #dddddd;
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.social li a {
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social li a:hover {
+  color: var(--secondary-color);
+}
+
+footer .copyright {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1rem 0;
+  background: #1e2b32;
+  font-size: 0.9rem;
+}
+
+/* Founders section */
+.founders {
+  background: var(--accent-color);
+}
+.founders-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.founders-text {
+  flex: 1 1 50%;
+}
+.founders-text h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.founders-text p {
+  line-height: 1.6;
+}
+.founders-image {
+  flex: 1 1 50%;
+  text-align: center;
+}
+.founders-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+  .founders-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+  .founders-image, .founders-text {
+    flex: 1 1 100%;
+  }
+}
+
+/* Page hero for internal pages */
+.page-hero {
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.page-hero-overlay {
+  position: relative;
+  color: #ffffff;
+}
+
+.page-hero-overlay h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Content sections for internal pages */
+.content {
+  background: #ffffff;
+}
+
+.content h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.content p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Form styles */
+.form-section {
+  background: var(--accent-color);
+}
+
+.form-section form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-family: var(--heading-font);
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group button {
+  background: var(--secondary-color);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-group button:hover {
+  background: var(--primary-color);
+}
+
+/* Gallery styles */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Show menu toggle on small screens */
+  .menu-toggle {
+    display: block;
+  }
+  /* Hide the nav list initially */
+  header.navbar nav ul {
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border: 1px solid #e5e5e5;
+    display: none;
+    padding: 0.5rem 0;
+  }
+  header.navbar nav ul.open {
+    display: block;
+  }
+  header.navbar nav ul li {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  header.navbar nav ul li:last-child {
+    border-bottom: none;
+  }
+  /* Make mission cards full width */
+  .mission-item {
+    flex: 1 1 100%;
+  }
+}

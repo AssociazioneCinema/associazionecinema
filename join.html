@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iscriviti | C.I.N.E.M.A.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logo-black.png" alt="C.I.N.E.M.A." class="logo-img">
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Chi&nbsp;Siamo</a></li>
+        <li><a href="statute.html">Statuto</a></li>
+        <li><a href="gallery.html">Galleria</a></li>
+        <li><a href="join.html" class="active">Iscriviti</a></li>
+        <li><a href="donate.html">Sostienici</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page hero -->
+  <section class="page-hero" style="background-image: url('images/community.png');">
+    <div class="page-hero-overlay">
+      <h1>Iscriviti</h1>
+    </div>
+  </section>
+
+  <!-- Form section -->
+  <section class="form-section">
+    <div class="container">
+      <h2>Modulo di iscrizione</h2>
+      <p>Compila il modulo seguente per entrare a far parte della nostra associazione. Dopo l'invio verrai contattato per completare la procedura di iscrizione.</p>
+      <form action="mailto:info@associazionexyz.it" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="Nome" required>
+        </div>
+        <div class="form-group">
+          <label for="cognome">Cognome</label>
+          <input type="text" id="cognome" name="Cognome" required>
+        </div>
+        <div class="form-group">
+          <label for="data-nascita">Data di nascita</label>
+          <input type="date" id="data-nascita" name="Data di nascita">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Telefono</label>
+          <input type="tel" id="telefono" name="Telefono">
+        </div>
+        <div class="form-group">
+          <label for="indirizzo">Indirizzo</label>
+          <input type="text" id="indirizzo" name="Indirizzo">
+        </div>
+        <div class="form-group">
+          <label for="cap">CAP</label>
+          <input type="text" id="cap" name="CAP">
+        </div>
+        <div class="form-group">
+          <label for="citta">Città</label>
+          <input type="text" id="citta" name="Città">
+        </div>
+        <div class="form-group">
+          <label for="tipologia">Tipologia di socio</label>
+          <select id="tipologia" name="Tipologia">
+            <option value="ordinario">Socio ordinario</option>
+            <option value="sostenitore">Socio sostenitore</option>
+            <option value="studente">Socio studente</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="messaggio">Messaggio</label>
+          <textarea id="messaggio" name="Messaggio" placeholder="Scrivi qui eventuali richieste o commenti..."></textarea>
+        </div>
+        <div class="form-group" style="text-align:center;">
+          <button type="submit">Invia richiesta</button>
+        </div>
+        <p><em>Nota: Il modulo utilizza la funzione mailto per inviare una email precompilata. Puoi modificare l'indirizzo email nell'attributo <strong>action</strong> oppure integrare il modulo con un sistema di gestione delle iscrizioni.</em></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-section">
+        <h4>Contatti</h4>
+        <p>Via Roma&nbsp;123, 20100&nbsp;Milano&nbsp;(MI)<br>
+           Email: info@associazionexyz.it<br>
+           Telefono: +39&nbsp;123&nbsp;456&nbsp;789</p>
+      </div>
+      <div class="footer-section">
+        <h4>Seguici</h4>
+        <ul class="social">
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Informazioni</h4>
+        <ul>
+          <li><a href="statute.html">Statuto</a></li>
+          <li><a href="about.html">Chi&nbsp;Siamo</a></li>
+          <li><a href="join.html">Iscriviti</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; <span id="year"></span> Associazione Culturale C.I.N.E.M.A.. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for dynamic year and mobile menu -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggleButton = document.getElementById('menu-toggle');
+    const navList = document.querySelector('header nav ul');
+    toggleButton.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

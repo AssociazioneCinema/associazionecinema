@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galleria | C.I.N.E.M.A.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logo-black.png" alt="C.I.N.E.M.A." class="logo-img">
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Chi&nbsp;Siamo</a></li>
+        <li><a href="statute.html">Statuto</a></li>
+        <li><a href="gallery.html" class="active">Galleria</a></li>
+        <li><a href="join.html">Iscriviti</a></li>
+        <li><a href="donate.html">Sostienici</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page hero -->
+  <section class="page-hero" style="background-image: url('images/pattern.png');">
+    <div class="page-hero-overlay">
+      <h1>Galleria</h1>
+    </div>
+  </section>
+
+  <!-- Gallery content -->
+  <section class="content">
+    <div class="container">
+      <h2>Foto e ricordi</h2>
+      <p>Uno sguardo alle nostre attività, agli eventi passati e ai momenti condivisi. Sostituisci queste immagini con le tue foto per creare una galleria personalizzata.</p>
+      <div class="gallery-grid">
+        <img src="images/photos/location1.jpg" alt="Sala cinema con sedute in legno">
+        <img src="images/photos/location2.jpg" alt="Sala cinema vista laterale">
+        <img src="images/photos/location3.jpg" alt="Sala cinema con palcoscenico">
+        <img src="images/photos/location4.jpg" alt="Prospettiva del palco e sedute">
+        <img src="images/photos/location5.jpg" alt="Giardino con tavolo all'aperto">
+        <img src="images/photos/location6.jpg" alt="Area esterna con tavolini tra gli alberi">
+        <img src="images/cinema/ef30b8b9.jpeg" alt="Bobine del Cinema Modernissimo">
+        <img src="images/cinema/b846f26b.jpeg" alt="Proiettore vintage con cartelli">
+        <img src="images/cinema/cc38c47b.jpeg" alt="Proiettore d'epoca nella sala macchine">
+        <img src="images/cinema/photo9e74.jpg" alt="Bobine in controluce">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-section">
+        <h4>Contatti</h4>
+        <p>Via Roma&nbsp;123, 20100&nbsp;Milano&nbsp;(MI)<br>
+           Email: info@associazionexyz.it<br>
+           Telefono: +39&nbsp;123&nbsp;456&nbsp;789</p>
+      </div>
+      <div class="footer-section">
+        <h4>Seguici</h4>
+        <ul class="social">
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Informazioni</h4>
+        <ul>
+          <li><a href="statute.html">Statuto</a></li>
+          <li><a href="about.html">Chi&nbsp;Siamo</a></li>
+          <li><a href="join.html">Iscriviti</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; <span id="year"></span> Associazione Culturale C.I.N.E.M.A.. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for dynamic year and mobile menu -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggleButton = document.getElementById('menu-toggle');
+    const navList = document.querySelector('header nav ul');
+    toggleButton.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

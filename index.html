@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C.I.N.E.M.A. – Associazione Culturale</title>
+  <!-- Link to external Google Font and stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <header class="navbar">
+    <div class="logo">
+      <!-- Logo image provided by l'associazione -->
+      <img src="images/logo-black.png" alt="C.I.N.E.M.A." class="logo-img">
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Chi&nbsp;Siamo</a></li>
+        <li><a href="statute.html">Statuto</a></li>
+        <li><a href="gallery.html">Galleria</a></li>
+        <li><a href="join.html">Iscriviti</a></li>
+        <li><a href="donate.html">Sostienici</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero section -->
+  <!-- Per conferire al sito un aspetto più vintage e legato al mondo del cinema,
+       utilizziamo come sfondo della hero una fotografia d'epoca della sala macchine. La
+       stessa immagine viene adattata a tutta larghezza tramite `background-size: cover`.
+       È possibile sostituire questo sfondo con un'altra immagine depositata in
+       `images/cinema/` per personalizzare ulteriormente. -->
+  <section class="hero" style="background-image: url('images/cinema/b846f26b.jpeg');">
+    <div class="hero-overlay">
+      <h1>C.I.N.E.M.A.</h1>
+      <p>Cultura · Intrattenimento · Natura · Educazione · Mestieri · Arte</p>
+      <a href="join.html" class="button">Unisciti a&nbsp;Noi</a>
+    </div>
+  </section>
+
+  <!-- About preview section -->
+  <section class="about-preview">
+    <div class="container">
+      <h2>Chi Siamo</h2>
+      <p>L'Associazione Culturale <strong>C.I.N.E.M.A.</strong> nasce per valorizzare cultura, intrattenimento, natura, educazione, mestieri e arte nel nostro territorio. Organizziamo eventi, laboratori e incontri per diffondere la conoscenza e creare una comunità attiva e partecipe.</p>
+      <a href="about.html" class="link-button">Scopri&nbsp;di&nbsp;più</a>
+    </div>
+  </section>
+
+  <!-- Mission section -->
+  <section class="mission">
+    <div class="container mission-grid">
+      <div class="mission-item">
+        <h3>Missione</h3>
+        <p>Diffondere l'amore per l'arte e la cultura attraverso attività ed eventi per tutte le età.</p>
+      </div>
+      <div class="mission-item">
+        <h3>Comunità</h3>
+        <p>Creiamo uno spazio di incontro e scambio, dove persone con interessi comuni possano conoscersi e crescere insieme.</p>
+      </div>
+      <div class="mission-item">
+        <h3>Opportunità</h3>
+        <p>Offriamo occasioni per imparare e sperimentare attraverso corsi, workshop e collaborazioni.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action section -->
+  <!-- CTA with background image taken dall'archivio del cinema -->
+  <section class="cta image" style="background-image: url('images/cinema/ef30b8b9.jpeg');">
+    <div class="container">
+      <h2>Vuoi far parte della nostra realtà?</h2>
+      <a href="join.html" class="button">Compila il modulo di iscrizione</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-section">
+        <h4>Contatti</h4>
+        <p>Via Roma&nbsp;123, 20100&nbsp;Milano&nbsp;(MI)<br>
+           Email: info@associazionexyz.it<br>
+           Telefono: +39&nbsp;123&nbsp;456&nbsp;789</p>
+      </div>
+      <div class="footer-section">
+        <h4>Seguici</h4>
+        <ul class="social">
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Informazioni</h4>
+        <ul>
+          <li><a href="statute.html">Statuto</a></li>
+          <li><a href="about.html">Chi&nbsp;Siamo</a></li>
+          <li><a href="join.html">Iscriviti</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; <span id="year"></span> Associazione Culturale C.I.N.E.M.A.. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for dynamic year and mobile menu -->
+  <script>
+    // Aggiorna l'anno nel footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Toggle menu on small screens
+    const toggleButton = document.getElementById('menu-toggle');
+    const navList = document.querySelector('header nav ul');
+    toggleButton.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

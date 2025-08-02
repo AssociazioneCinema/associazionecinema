@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Siamo | C.I.N.E.M.A.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logo-black.png" alt="C.I.N.E.M.A." class="logo-img">
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">Chi&nbsp;Siamo</a></li>
+        <li><a href="statute.html">Statuto</a></li>
+        <li><a href="gallery.html">Galleria</a></li>
+        <li><a href="join.html">Iscriviti</a></li>
+        <li><a href="donate.html">Sostienici</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page hero: foto vintage del proiettore -->
+  <section class="page-hero" style="background-image: url('images/cinema/cc38c47b.jpeg');">
+    <div class="page-hero-overlay">
+      <h1>Chi Siamo</h1>
+    </div>
+  </section>
+
+  <!-- About content -->
+  <section class="content">
+    <div class="container">
+      <h2>La nostra storia</h2>
+      <p>L'Associazione Culturale <strong>C.I.N.E.M.A.</strong> è nata dalla passione di un gruppo di amici per l'arte, la musica, la natura e la cultura in tutte le sue forme. Fin dalla sua fondazione ci impegniamo a creare opportunità per condividere conoscenze e coltivare talenti all'interno della nostra comunità.</p>
+      <p>Nel corso degli anni abbiamo organizzato mostre d'arte, concerti, spettacoli teatrali e laboratori formativi. Ogni evento è pensato per avvicinare le persone alla cultura e stimolare la curiosità di grandi e piccoli.</p>
+
+      <!-- Founders section -->
+      <section class="founders" style="margin-top: 2rem; margin-bottom: 2rem;">
+        <div class="founders-grid">
+          <div class="founders-text">
+            <h2>I fondatori</h2>
+            <p>Ispirati dalla visione di <strong>Angelo&nbsp;Villani</strong> e <strong>Antonietta&nbsp;Carraro</strong>, pionieri che diedero vita al Cinema e al Ristorante Modernissimo negli anni Sessanta, portiamo avanti il loro sogno con passione. La loro dedizione ha trasformato un luogo in un vero punto di riferimento culturale per la comunità, unendo cibo, arte e intrattenimento. Oggi continuiamo il loro lascito, mantenendo viva la memoria e aprendo le porte a nuove generazioni di appassionati.</p>
+          </div>
+          <div class="founders-image">
+            <img src="images/founders.png" alt="I fondatori dell'associazione" />
+          </div>
+        </div>
+      </section>
+      <h2>Le nostre attività</h2>
+      <p>Ci occupiamo di promuovere diverse discipline artistiche e culturali:</p>
+      <ul>
+        <li>Organizzazione di mostre e vernissage per artisti emergenti;</li>
+        <li>Corsi di musica, teatro e danza per tutte le età;</li>
+        <li>Laboratori creativi per bambini e ragazzi;</li>
+        <li>Incontri e dibattiti su temi culturali e sociali;</li>
+        <li>Collaborazioni con scuole e altre associazioni del territorio.</li>
+      </ul>
+      <p>La nostra associazione è un luogo dove condividere esperienze, imparare nuove abilità e stringere amicizie durature. Siamo sempre aperti a nuove idee e collaborazioni!</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-section">
+        <h4>Contatti</h4>
+        <p>Via Roma&nbsp;123, 20100&nbsp;Milano&nbsp;(MI)<br>
+           Email: info@associazionexyz.it<br>
+           Telefono: +39&nbsp;123&nbsp;456&nbsp;789</p>
+      </div>
+      <div class="footer-section">
+        <h4>Seguici</h4>
+        <ul class="social">
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Informazioni</h4>
+        <ul>
+          <li><a href="statute.html">Statuto</a></li>
+          <li><a href="about.html">Chi&nbsp;Siamo</a></li>
+          <li><a href="join.html">Iscriviti</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; <span id="year"></span> Associazione Culturale C.I.N.E.M.A.. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for dynamic year and mobile menu -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggleButton = document.getElementById('menu-toggle');
+    const navList = document.querySelector('header nav ul');
+    toggleButton.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
